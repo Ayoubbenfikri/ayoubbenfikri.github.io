@@ -154,20 +154,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
+// const music = document.getElementById("bgMusic");
+// const btn = document.getElementById("musicBtn");
 
-btn.addEventListener("click", toggleMusic);
+// btn.addEventListener("click", toggleMusic);
 
-function toggleMusic(){
-    if (music.paused) {
-        music.play();
-        btn.textContent = "⏸ Pause Music";
-    } else {
-        music.pause();
-        btn.textContent = "▶ Play Music";
-    }
-}
+// function toggleMusic(){
+//     if (music.paused) {
+//         music.play();
+//         btn.textContent = "⏸ Pause Music";
+//     } else {
+//         music.pause();
+//         btn.textContent = "▶ Play Music";
+//     }
+// }
 
 // Auto-sliding project galleries - only hovered slider moves
 // Remove ALL the hover slider code and replace with:
@@ -304,4 +304,5 @@ const languagesObserver = new IntersectionObserver((entries) => {
 const languagesSection = document.getElementById('languages');
 if (languagesSection) {
     languagesObserver.observe(languagesSection);
+
 }
