@@ -1488,5 +1488,49 @@ section:not(.hero).animated {
         text-align: left;
     }
 }
+/* Additional improvements for responsive */
+.project-img {
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
 
+.fa-docker { color: #2496ED; }
+.fa-wordpress { color: #21759b; }
+.fa-chart-line { color: #FF9800; }
+
+.timeline-content ul {
+    margin-top: 12px;
+    padding-left: 20px;
+}
+
+.timeline-content ul li {
+    margin-bottom: 8px;
+    color: #718096;
+}
+
+.timeline-content ul li i {
+    color: #667eea;
+    margin-right: 8px;
+    font-size: 0.85rem;
+}
+
+.dark-mode .timeline-content ul li {
+    color: #cbd5e1;
+}
+
+/* Fix stats grid */
+.stats {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 480px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
 
