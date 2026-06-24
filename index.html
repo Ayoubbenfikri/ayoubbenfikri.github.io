@@ -3,171 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayoub Benfikri</title>
+    <title>Ayoub Benfikri — Full Stack Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <!-- Navigation -->
-    <header>
-        <div class="container">
+    <header id="header">
+        <div class="nav-inner">
+            <a href="#home" class="logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-name">AB</span>
+                <span class="logo-bracket">]</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
             <nav>
-                <a href="#home" class="logo">{Ayoub<span>Benfikri}</span></a>
-                <div class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </div>
                 <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Education</a></li>
-                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dark-mode-toggle">
-                    <button id="darkModeToggle" class="dark-mode-btn">
-                        <i class="fas fa-moon"></i>
-                        <span>Dark Mode</span>
-                    </button>
-                </li>
-            </ul>
+                    <li><a href="#home"><span class="nav-num">01.</span>Home</a></li>
+                    <li><a href="#about"><span class="nav-num">02.</span>About</a></li>
+                    <li><a href="#experience"><span class="nav-num">03.</span>Experience</a></li>
+                    <li><a href="#projects"><span class="nav-num">04.</span>Projects</a></li>
+                    <li><a href="#skills"><span class="nav-num">05.</span>Skills</a></li>
+                    <li><a href="#contact"><span class="nav-num">06.</span>Contact</a></li>
+                </ul>
             </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-sun" id="themeIcon"></i>
+            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-   <section class="hero" id="home">
-    <div class="container hero-content">
-        <div class="hero-text">
-            <h2>Hello , I'm</h2>
-            <h1>AYOUB BENFIKRI</h1>
-            <h2>Junior Full Stack Developer</h2>
-
-            <p  class="hero-text">Passionate about building modern and high-performance web applications. Skilled in front-end and back-end technologies with an Agile approach.</p>
-            <div class="hero-buttons">
-             
-                <a href="#contact" class="btn">Contact Me</a>
-                
-                <!-- <audio id="bgMusic" loop>
-                        <source src="music.mp3" type="audio/mpeg">
-                </audio>
-
-                <button id="musicBtn" class="music-btn"> ▶ Play Music</button> -->
-
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <p class="hero-greeting">Hello, world! I'm</p>
+                <h1 class="hero-name">Ayoub<br>Benfikri</h1>
+                <div class="hero-role">
+                    <span class="role-prefix">const role = "</span><span class="typed-text" id="typedText"></span><span class="cursor">|</span><span class="role-suffix">"</span>
+                </div>
+                <p class="hero-desc">Building clean, performant web apps — front to back. Based in Marrakech, Morocco.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary">View Work</a>
+                    <a href="#contact" class="btn-ghost">Get In Touch</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://www.linkedin.com/in/ayoub-benfikri-48476b2b2" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Ayoubbenfikri" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://wa.me/212669216374" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="terminal-card">
+                    <div class="terminal-bar">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">ayoub.json</span>
+                    </div>
+                    <div class="terminal-body">
+                        <pre><span class="t-brace">{</span>
+  <span class="t-key">"name"</span><span class="t-colon">:</span> <span class="t-str">"Ayoub Benfikri"</span><span class="t-comma">,</span>
+  <span class="t-key">"role"</span><span class="t-colon">:</span> <span class="t-str">"Full Stack Developer"</span><span class="t-comma">,</span>
+  <span class="t-key">"location"</span><span class="t-colon">:</span> <span class="t-str">"Marrakech 🇲🇦"</span><span class="t-comma">,</span>
+  <span class="t-key">"stack"</span><span class="t-colon">:</span> <span class="t-brace">[</span>
+    <span class="t-str">"Laravel"</span><span class="t-comma">,</span>
+    <span class="t-str">"React"</span><span class="t-comma">,</span>
+    <span class="t-str">"MySQL"</span><span class="t-comma">,</span>
+    <span class="t-str">"MongoDB"</span><span class="t-comma">,</span>
+    <span class="t-str">"Docker"</span>
+  <span class="t-brace">]</span><span class="t-comma">,</span>
+  <span class="t-key">"status"</span><span class="t-colon">:</span> <span class="t-green">"available"</span><span class="t-comma">,</span>
+  <span class="t-key">"experience"</span><span class="t-colon">:</span> <span class="t-num">1</span>
+<span class="t-brace">}</span></pre>
+                    </div>
+                </div>
+                <div class="photo-wrap">
+                    <img src="photocv1.jpg" alt="Ayoub Benfikri" class="hero-photo">
+                </div>
             </div>
         </div>
-        
-        <div class="hero-image">
-            <div class="photo-container">
-                <img src="photocv1.jpg" alt="Ayoub Benfikri" class="profile-photo">
-                <div class="shape-overlay"></div>
+        <div class="hero-scroll">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Tech Bar -->
+    <div class="tech-bar">
+        <div class="tech-bar-inner">
+            <div class="tech-bar-track">
+                <span class="tb-item"><i class="fab fa-html5"></i> HTML5</span>
+                <span class="tb-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+                <span class="tb-item"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="tb-item"><i class="fab fa-react"></i> React</span>
+                <span class="tb-item"><i class="fab fa-php"></i> PHP</span>
+                <span class="tb-item"><i class="fab fa-laravel"></i> Laravel</span>
+                <span class="tb-item"><i class="fab fa-python"></i> Python</span>
+                <span class="tb-item"><i class="fas fa-database"></i> MySQL</span>
+                <span class="tb-item"><i class="fab fa-envira"></i> MongoDB</span>
+                <span class="tb-item"><i class="fab fa-docker"></i> Docker</span>
+                <span class="tb-item"><i class="fab fa-git-alt"></i> Git</span>
+                <span class="tb-item"><i class="fab fa-wordpress"></i> WordPress</span>
+                <!-- Duplicate for infinite scroll -->
+                <span class="tb-item"><i class="fab fa-html5"></i> HTML5</span>
+                <span class="tb-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+                <span class="tb-item"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="tb-item"><i class="fab fa-react"></i> React</span>
+                <span class="tb-item"><i class="fab fa-php"></i> PHP</span>
+                <span class="tb-item"><i class="fab fa-laravel"></i> Laravel</span>
+                <span class="tb-item"><i class="fab fa-python"></i> Python</span>
+                <span class="tb-item"><i class="fas fa-database"></i> MySQL</span>
+                <span class="tb-item"><i class="fab fa-envira"></i> MongoDB</span>
+                <span class="tb-item"><i class="fab fa-docker"></i> Docker</span>
+                <span class="tb-item"><i class="fab fa-git-alt"></i> Git</span>
+                <span class="tb-item"><i class="fab fa-wordpress"></i> WordPress</span>
             </div>
         </div>
     </div>
-    
-    <div class="tech-icons">
-        <div class="tech-icon">
-            <i class="fab fa-html5"></i>
-            <span>HTML</span>
-        </div>
-        <div class="tech-icon">
-            <i class="fab fa-css3-alt"></i>
-            <span>CSS</span>
-        </div>
-        <div class="tech-icon">
-            <i class="fab fa-js"></i>
-            <span>JavaScript</span>
-        </div>
-        <div class="tech-icon">
-            <i class="fab fa-react"></i>
-            <span>React</span>
-        </div>
-        <div class="tech-icon">
-            <i class="fab fa-php"></i>
-            <span>PHP</span>
-        </div>
-        <div class="tech-icon">
-            <i class="fab fa-laravel"></i>
-            <span>Laravel</span>
-        </div>
 
-
-        <div class="tech-icon">
-            <i class="fab fa-python"></i>
-            <span>Python</span>
-        </div>
-        <div class="tech-icon">
-            <i class="fab fa-cuttlefish"></i>
-            <span>C++</span>
-        </div>
-        <div class="tech-icon">
-    <i class="fas fa-database"></i> <!-- MySQL icon -->
-    <span>MySQL</span>
-        </div>
-        <div class="tech-icon">
-            <i class="fab fa-envira"></i> <!-- MongoDB icon -->
-            <span>MongoDB</span>
-        </div>
-        <div class="tech-icon">
-    <i class="fab fa-wordpress"></i>
-    <span>WordPress</span>
-</div>
-<div class="tech-icon">
-    <i class="fas fa-chart-line"></i>
-    <span>SEO</span>
-</div>
-<div class="tech-icon">
-    <i class="fab fa-docker"></i>
-    <span>Docker</span>
-</div>
-    </div>
-</section>
-
-    <!-- About Section -->
-    <section id="about">
+    <!-- About -->
+    <section id="about" class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-            </div>
-            
-            <div class="about-content">
+            <div class="section-label"><span class="label-num">02.</span> About Me</div>
+            <div class="about-grid">
                 <div class="about-text">
-                    <h3>My Journey</h3>
-                    <p>
-                        Passionate Junior Full Stack Developer with a background in Digital Development at ISTA NTIC SYBA, Marrakech. I build modern and responsive web applications using the latest web technologies.
-                        During my training and projects, I have strengthened my technical skills and gained experience working in an Agile-style development environment, focusing on performance, clean code, and user-friendly design.
-                    </p>
-
-                    
-                    <div class="personal-info">
-                        <div class="info-item">
-                            <i class="fas fa-user"></i>
-                            <span>Name: Ayoub Benfikri</span>
-
+                    <h2 class="section-heading">Who I Am</h2>
+                    <p>I'm a Junior Full Stack Developer trained at <span class="highlight">ISTA NTIC SYBA, Marrakech</span>, with a background in Physical Sciences from Cadi Ayyad University. My path from science to code gives me a systematic approach to problem-solving.</p>
+                    <p>During my internship at <span class="highlight">CHU Mohammed VI</span>, I built an Incident Management System used by hospital IT staff — real users, real stakes. I like building things that actually get used.</p>
+                    <div class="about-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Marrakech, Morocco</span>
                         </div>
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>Phone: +212 669216374 </span>
-                        </div>
-                        <div class="info-item">
+                        <div class="meta-item">
                             <i class="fas fa-envelope"></i>
-                            <span>Email: fikriayoub65@gmail.com</span>
+                            <a href="mailto:fikriayoub65@gmail.com">fikriayoub65@gmail.com</a>
                         </div>
-                        
-                        
+                        <div class="meta-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+212669216374">+212 669 216 374</a>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-circle" style="color: var(--green)"></i>
+                            <span>Available for opportunities</span>
+                        </div>
                     </div>
                 </div>
-                
                 <div class="about-stats">
-                    <div class="stats">
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="6">0</div>
-                            <div class="stat-label">Projects Completed</div>
+                    <div class="stat-card">
+                        <span class="stat-value">6+</span>
+                        <span class="stat-label">Projects Built</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">13+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">1</span>
+                        <span class="stat-label">Real-World Internship</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Languages Spoken</span>
+                    </div>
+                    <div class="lang-badges">
+                        <div class="lang-badge">
+                            <span class="lang-name">Arabic</span>
+                            <span class="lang-level">Native</span>
                         </div>
-                        
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="10">0</div>
-                            <div class="stat-label">Technologies Mastered</div>
+                        <div class="lang-badge">
+                            <span class="lang-name">French</span>
+                            <span class="lang-level">B2</span>
+                        </div>
+                        <div class="lang-badge">
+                            <span class="lang-name">English</span>
+                            <span class="lang-level">C1</span>
                         </div>
                     </div>
                 </div>
@@ -175,486 +190,298 @@
         </div>
     </section>
 
-     <section id="projects">
+    <!-- Experience & Education -->
+    <section id="experience" class="section section-alt">
         <div class="container">
-            <div class="section-title">
-                <h2>My Projects</h2>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-slider">
-                        <button class="slider-prev">‹</button>
-                        <button class="slider-next">›</button>
-                        <div class="slides">
-                            <img src="glutivia/1.png" alt="Project 1 Image 1" class="slide active">
-                            <img src="glutivia/2.png" alt="Project 1 Image 2" class="slide">
-                            <img src="glutivia/3.png" alt="Project 1 Image 2" class="slide">
-                            <img src="glutivia/4.png" alt="Project 1 Image 2" class="slide">
-                            <img src="glutivia/5.png" alt="Project 1 Image 2" class="slide">
-                            <img src="glutivia/6.png" alt="Project 1 Image 2" class="slide">
-                            <img src="glutivia/7.png" alt="Project 1 Image 2" class="slide">
-                            <img src="glutivia/8.png" alt="Project 1 Image 2" class="slide">
-                            <img src="glutivia/9.png" alt="Project 1 Image 2" class="slide">
-                            <img src="glutivia/10.png" alt="Project 1 Image 2" class="slide">
-                            
-                        </div>
-                        
-                        <div class="slider-dots">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Glutivia – Gluten-Free Lifestyle Platform</h3>
-                        <p>Glutivia is a responsive web platform that helps users discover gluten-free products, healthy recipes, and lifestyle tips through an intuitive and modern interface.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                       <div class="project-slider">
-                        <button class="slider-prev">‹</button>
-                        <button class="slider-next">›</button>
-                        <div class="slides">
-                            <img src="restaurant/Screenshot 2026-02-01 013906.png" alt="Project 1 Image 1" class="slide active">
-                            <img src="restaurant/Screenshot 2026-02-01 014039.png" alt="Project 1 Image 2" class="slide">
-                            <img src="restaurant/Screenshot 2026-02-01 014115.png" alt="Project 1 Image 3" class="slide">
-                            <img src="restaurant/Screenshot 2026-02-01 014209.png" alt="Project 1 Image 3" class="slide">
-                            <img src="restaurant/Screenshot 2026-02-01 014309.png" alt="Project 1 Image 3" class="slide">
-                        </div>
-                        
-                        <div class="slider-dots">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Restaurant Order Management System</h3>
-                        <p>A PHP-based system with client ordering, chef dish management, and admin order tracking with real-time status updates.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">Html</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Bootstrap</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                     <div class="project-slider">
-                        <button class="slider-prev">‹</button>
-                        <button class="slider-next">›</button>
-                        <div class="slides">
-                            <img src="PHYTON/Screenshot 2026-02-01 022414.png" alt="Project 1 Image 1" class="slide active">
-                            <img src="PHYTON/Screenshot 2026-02-01 021612.png" alt="Project 1 Image 2" class="slide">
-                            <img src="PHYTON/Screenshot 2026-02-01 022620.png" alt="Project 1 Image 3" class="slide">
-                        </div>
-                        
-                        <div class="slider-dots">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Flight Data Analysis & Visualization Tool</h3>
-                        <p>A Python-based data analysis application that reads flight passenger data from CSV files and visualizes trends using interactive charts. The system allows users to display time series graphs, monthly heatmaps, and compare passenger numbers by year or month for better insights and data-driven analysis.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">CSV</span>
-                            <span class="tech-tag">Matplotlib</span>
-                          
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Experience Section -->
-<section id="experience">
-    <div class="container">
-        <div class="section-title">
-            <h2>Professional Experience</h2>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">Apr 2026</div>
-                <div class="timeline-content">
-                    <h4>IT Intern – Incident Management Application</h4>
-                    <div class="company">CHU Mohammed VI – Marrakech (IT Department)</div>
-                    <p><strong>Duration:</strong> 1 month (April 1 – April 30, 2026)</p>
-                    <p>Developed a comprehensive <strong>Incident Management Application</strong> to track, report, and resolve technical incidents within the hospital environment. The system streamlined communication between IT teams and hospital staff.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Requirement analysis & database design (MySQL)</li>
-                        <li><i class="fas fa-check-circle"></i> Implemented user authentication with role-based access (Admin/Technician/User)</li>
-                        <li><i class="fas fa-check-circle"></i> Created ticket submission, assignment, and real-time status tracking</li>
-                        <li><i class="fas fa-check-circle"></i> Containerized the development environment using <strong>Docker</strong></li>
-                    </ul>
-                    <p><strong>Tech stack:</strong> laravel, MySQL, Docker, talwindCss, JavaScript</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Education Section -->
-    <section id="experience">
-        <div class="container">
-            <div class="section-title">
-                <h2>Education</h2>
-            </div>
-            
+            <div class="section-label"><span class="label-num">03.</span> Experience & Education</div>
+            <h2 class="section-heading">My Journey</h2>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2020 – 2021</div>
-                    <div class="timeline-content">
-                        <h4>Baccalaureate in Science physics</h4>
-                        <div class="company">Hassan Ibn Thabit High School</div>
-                        <p>Completed secondary education with a scientific focus, building a strong foundation in mathematics and sciences.</p>
+
+                <div class="tl-item featured reveal">
+                    <div class="tl-aside">
+                        <span class="tl-date">Apr 2026</span>
+                        <span class="tl-tag">Work</span>
+                    </div>
+                    <div class="tl-card">
+                        <div class="tl-card-top">
+                            <h3>IT Intern — Incident Management</h3>
+                            <span class="tl-company">CHU Mohammed VI · Marrakech</span>
+                        </div>
+                        <p>Built a full Incident Management Application for the hospital's IT department — role-based auth, ticket lifecycle, real-time status tracking. Containerized using Docker.</p>
+                        <div class="tl-stack">
+                            <span>Laravel</span><span>MySQL</span><span>Docker</span><span>Tailwind CSS</span><span>JavaScript</span>
+                        </div>
                     </div>
                 </div>
-                  <div class="timeline-item">
-                    <div class="timeline-date">2021 – 2024</div>
-                    <div class="timeline-content">
-                        <h4>DEUG in Physical Sciences</h4>
-                        <div class="company">Faculty of Sciences Semlalia, Marrakech</div>
-                        <p>Undergraduate studies in physical sciences, covering fundamental concepts in physics and scientific analysis, with strong emphasis on problem-solving and analytical thinking.</p>
+
+                <div class="tl-item reveal">
+                    <div class="tl-aside">
+                        <span class="tl-date">2024–2026</span>
+                        <span class="tl-tag">Study</span>
+                    </div>
+                    <div class="tl-card">
+                        <div class="tl-card-top">
+                            <h3>Specialized Technician Diploma — Web Full Stack</h3>
+                            <span class="tl-company">OFPPT · ISTA SYBA, Marrakech</span>
+                        </div>
+                        <p>Intensive 2-year technical training covering full-stack web development, databases, DevOps basics, and Agile methodology.</p>
                     </div>
                 </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">2024 – 2026</div>
-                    <div class="timeline-content">
-                        <h4>Specialized Technician Diploma in Digital Development – Web Full Stack Option</h4>
-                        <div class="company">OFPPT – ISTA Sidi Youssef Ben Ali, Marrakech</div>
-                        <p>Specialized training in digital development focused on full-stack web technologies, including frontend and backend development, databases, and modern frameworks. Emphasis on practical projects and professional skills.</p>
+
+                <div class="tl-item reveal">
+                    <div class="tl-aside">
+                        <span class="tl-date">2021–2024</span>
+                        <span class="tl-tag">Study</span>
+                    </div>
+                    <div class="tl-card">
+                        <div class="tl-card-top">
+                            <h3>DEUG — Physical Sciences</h3>
+                            <span class="tl-company">Faculty of Sciences Semlalia, Marrakech</span>
+                        </div>
+                        <p>Undergraduate studies in physics and mathematics — built analytical thinking and problem-solving skills that transfer directly to software engineering.</p>
                     </div>
                 </div>
+
+                <div class="tl-item reveal">
+                    <div class="tl-aside">
+                        <span class="tl-date">2020–2021</span>
+                        <span class="tl-tag">Study</span>
+                    </div>
+                    <div class="tl-card">
+                        <div class="tl-card-top">
+                            <h3>Baccalaureate — Science Physics</h3>
+                            <span class="tl-company">Hassan Ibn Thabit High School</span>
+                        </div>
+                        <p>Scientific baccalaureate with focus on mathematics and physics.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-   
-
-    <!-- Skills Section -->
-    <section id="skills">
+    <!-- Projects -->
+    <section id="projects" class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>My Skills</h2>
-            </div>
-            
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>HTML/CSS</span>
-                               
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="95"></div>
-                            </div>
+            <div class="section-label"><span class="label-num">04.</span> Projects</div>
+            <h2 class="section-heading">Selected Work</h2>
+            <div class="projects-grid">
+
+                <div class="project-card reveal">
+                    <div class="project-slider">
+                        <button class="slider-prev" aria-label="Previous">‹</button>
+                        <button class="slider-next" aria-label="Next">›</button>
+                        <div class="slides">
+                            <img src="glutivia/1.png" alt="Glutivia screenshot 1" class="slide active">
+                            <img src="glutivia/2.png" alt="Glutivia screenshot 2" class="slide">
+                            <img src="glutivia/3.png" alt="Glutivia screenshot 3" class="slide">
+                            <img src="glutivia/4.png" alt="Glutivia screenshot 4" class="slide">
+                            <img src="glutivia/5.png" alt="Glutivia screenshot 5" class="slide">
+                            <img src="glutivia/6.png" alt="Glutivia screenshot 6" class="slide">
+                            <img src="glutivia/7.png" alt="Glutivia screenshot 7" class="slide">
+                            <img src="glutivia/8.png" alt="Glutivia screenshot 8" class="slide">
+                            <img src="glutivia/9.png" alt="Glutivia screenshot 9" class="slide">
+                            <img src="glutivia/10.png" alt="Glutivia screenshot 10" class="slide">
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>JavaScript</span>
-                              
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="87"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Python</span>
-                                
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="70"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>PHP</span>
-                              
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="80"></div>
-                            </div>
-                        </div>
-                        
-                         <div class="skill-item">
-                            <div class="skill-name">
-                                <span>C++</span>
-                                
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="50"></div>
-                            </div>
+                        <div class="slider-dots" id="dots-0"></div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-num">01</span>
+                        <h3>Glutivia</h3>
+                        <p>Gluten-free lifestyle platform — discover products, recipes, and tips through a modern, intuitive interface.</p>
+                        <div class="project-tags">
+                            <span>React</span><span>Laravel</span><span>MongoDB</span><span>CSS</span>
                         </div>
                     </div>
                 </div>
-                
 
-                  
-
-                <div class="skill-category">
-                    <h3>Frameworks & Libraries</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>React</span>
-                                
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="90"></div>
-                            </div>
+                <div class="project-card reveal">
+                    <div class="project-slider">
+                        <button class="slider-prev" aria-label="Previous">‹</button>
+                        <button class="slider-next" aria-label="Next">›</button>
+                        <div class="slides">
+                            <img src="restaurant/Screenshot 2026-02-01 013906.png" alt="Restaurant app screenshot 1" class="slide active">
+                            <img src="restaurant/Screenshot 2026-02-01 014039.png" alt="Restaurant app screenshot 2" class="slide">
+                            <img src="restaurant/Screenshot 2026-02-01 014115.png" alt="Restaurant app screenshot 3" class="slide">
+                            <img src="restaurant/Screenshot 2026-02-01 014209.png" alt="Restaurant app screenshot 4" class="slide">
+                            <img src="restaurant/Screenshot 2026-02-01 014309.png" alt="Restaurant app screenshot 5" class="slide">
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Laravel</span>
-                                
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Bootstrap</span>
-                                <span></span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="95"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Tailwind CSS</span>
-                                
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="35"></div>
-                            </div>
+                        <div class="slider-dots" id="dots-1"></div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-num">02</span>
+                        <h3>Restaurant Order System</h3>
+                        <p>PHP-based system with client ordering, chef dish management, and admin tracking with real-time status updates.</p>
+                        <div class="project-tags">
+                            <span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span>
                         </div>
                     </div>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Databases & Tools</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                           
-                            <div class="skill-name">
-                                <span>MySQL</span>
-                                
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>MongoDB</span>
-                                
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="80"></div>
-                            </div>
-                        </div>
-                         <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Docker</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="75"></div>
-                            </div>
-                        </div>
 
-                            <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Git/GitHub</span>
-                                
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="90"></div>
-                            </div>
+                <div class="project-card reveal">
+                    <div class="project-slider">
+                        <button class="slider-prev" aria-label="Previous">‹</button>
+                        <button class="slider-next" aria-label="Next">›</button>
+                        <div class="slides">
+                            <img src="PHYTON/Screenshot 2026-02-01 022414.png" alt="Flight data app screenshot 1" class="slide active">
+                            <img src="PHYTON/Screenshot 2026-02-01 021612.png" alt="Flight data app screenshot 2" class="slide">
+                            <img src="PHYTON/Screenshot 2026-02-01 022620.png" alt="Flight data app screenshot 3" class="slide">
                         </div>
-
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Jira</span>
-                               
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Linux</span>
-                                
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="40"></div>
-                            </div>
+                        <div class="slider-dots" id="dots-2"></div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-num">03</span>
+                        <h3>Flight Data Visualizer</h3>
+                        <p>Python data analysis tool — reads CSV flight data and renders interactive time-series charts, heatmaps, and comparisons.</p>
+                        <div class="project-tags">
+                            <span>Python</span><span>Matplotlib</span><span>CSV</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-     <!-- Languages Section -->
-<section id="languages">
-    <div class="container">
-        <div class="section-title">
-            <h2>Languages</h2>
-        </div>
-        
-        <div class="languages-container">
-            <div class="language-item">
-                <div class="language-content">
-                    <div class="language-icon">
-                        <i class="fas fa-globe-africa"></i>
-                    </div>
-                    <div class="language-info">
-                        <h3>Arabic</h3>
-                        <p class="language-level">Native Language</p>
-                    </div>
-                </div>
-                <div class="language-progress">
-                    <div class="language-bar">
-                        <div class="language-fill" data-level="100"></div>
-                    </div>
-                    <span class="language-percent"></span>
-                </div>
-            </div>
-            
-            <div class="language-item">
-                <div class="language-content">
-                    <div class="language-icon">
-                        <i class="fas fa-flag"></i>
-                    </div>
-                    <div class="language-info">
-                        <h3>French</h3>
-                        <p class="language-level">B2 - Intermediate</p>
-                    </div>
-                </div>
-                <div class="language-progress">
-                    <div class="language-bar">
-                        <div class="language-fill" data-level="75"></div>
-                    </div>
-                    <span class="language-percent"></span>
-                </div>
-            </div>
-            
-            <div class="language-item">
-                <div class="language-content">
-                    <div class="language-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <div class="language-info">
-                        <h3>English</h3>
-                        <p class="language-level">C1 - Advanced</p>
-                    </div>
-                </div>
-                <div class="language-progress">
-                    <div class="language-bar">
-                        <div class="language-fill" data-level="90"></div>
-                    </div>
-                    <span class="language-percent"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    
-
-    
-
-    <!-- Contact Section -->
-    <section id="contact">
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
         <div class="container">
-            <div class="section-title">
-                <h2>Contact Me</h2>
+            <div class="section-label"><span class="label-num">05.</span> Skills</div>
+            <h2 class="section-heading">Tech Stack</h2>
+            <div class="skills-grid">
+
+                <div class="skill-group reveal">
+                    <div class="skill-group-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-row">
+                            <div class="skill-info"><span>HTML / CSS</span><span class="skill-pct">95%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="95"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>JavaScript</span><span class="skill-pct">87%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="87"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>PHP</span><span class="skill-pct">80%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>Python</span><span class="skill-pct">70%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="70"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>C++</span><span class="skill-pct">50%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="50"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-group reveal">
+                    <div class="skill-group-header">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Frameworks</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-row">
+                            <div class="skill-info"><span>React</span><span class="skill-pct">90%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="90"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>Laravel</span><span class="skill-pct">80%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>Bootstrap</span><span class="skill-pct">95%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="95"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>Tailwind CSS</span><span class="skill-pct">35%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="35"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-group reveal">
+                    <div class="skill-group-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Tools & Databases</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-row">
+                            <div class="skill-info"><span>MySQL</span><span class="skill-pct">85%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="85"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>MongoDB</span><span class="skill-pct">80%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>Docker</span><span class="skill-pct">75%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>Git / GitHub</span><span class="skill-pct">90%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="90"></div></div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-info"><span>Linux</span><span class="skill-pct">40%</span></div>
+                            <div class="skill-track"><div class="skill-fill" data-w="40"></div></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            
-            <div class="contact-info">
-               <div class="contact-item">
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-label"><span class="label-num">06.</span> Contact</div>
+            <h2 class="section-heading">Let's Work Together</h2>
+            <p class="contact-sub">I'm currently open to new opportunities. Whether you have a project in mind or just want to connect — my inbox is open.</p>
+            <div class="contact-cards">
+                <a href="mailto:fikriayoub65@gmail.com" class="contact-card">
                     <i class="fas fa-envelope"></i>
-                    <h4>Email</h4>
-                    <a href="mailto:fikriayoub65@gmail.com">fikriayoub65@gmail.com</a>
-                </div>
-
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <h4>Phone</h4>
-                <a href="tel:+212669216374">+212 669216374</a>
-            </div>
-                
-                <div class="contact-item">
+                    <span class="contact-card-label">Email</span>
+                    <span class="contact-card-value">fikriayoub65@gmail.com</span>
+                </a>
+                <a href="tel:+212669216374" class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <span class="contact-card-label">Phone</span>
+                    <span class="contact-card-value">+212 669 216 374</span>
+                </a>
+                <div class="contact-card">
                     <i class="fas fa-map-marker-alt"></i>
-                    <h4>Location</h4>
-                    <p>Marrakech , Maroc</p>
+                    <span class="contact-card-label">Location</span>
+                    <span class="contact-card-value">Marrakech, Morocco</span>
                 </div>
             </div>
-            
-            <div class="download-cv">
-                <h3>My Resume</h3>
-                <p>Complete version with all my experiences and skills</p>
-                <a href="resume.pdf" class="btn" id="downloadBtn" download>Download CV (PDF)</a>
+            <div class="cv-download">
+                <a href="resume.pdf" class="btn-primary" download>
+                    <i class="fas fa-download"></i>
+                    Download CV
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/ayoub-benfikri-48476b2b2" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/Ayoubbenfikri" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://wa.me/212669216374" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
+        <div class="footer-inner">
+            <span class="footer-logo">[AB]</span>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/ayoub-benfikri-48476b2b2" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Ayoubbenfikri" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/212669216374" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
-            
-            <div class="copyright">
-                <p>&copy; 2026 Ayoub Benfikri. All rights reserved.</p>
-            </div>
+            <p class="footer-copy">© 2026 Ayoub Benfikri. Designed & built from scratch.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
