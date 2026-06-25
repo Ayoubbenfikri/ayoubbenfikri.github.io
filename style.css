@@ -743,7 +743,7 @@ nav { display: flex; align-items: center; }
 /* ---------- Skills ---------- */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
 
@@ -900,7 +900,7 @@ footer {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-    .projects-grid,
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
     .hero-inner { grid-template-columns: 1fr; gap: 40px; }
     .hero-right { order: -1; }
