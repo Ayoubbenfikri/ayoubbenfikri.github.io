@@ -106,9 +106,13 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 });
 
 // ---------- Header scroll ----------
+const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-    const header = document.getElementById('header');
-    header.style.background = window.scrollY > 30 ? 'rgba(13,17,23,0.97)' : 'rgba(13,17,23,0.85)';
+    if (window.scrollY > 30) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
 }, { passive: true });
 
 // ---------- Smooth scroll ----------
@@ -123,13 +127,15 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
-// ---------- Sliders ----------
+// ---------- Sliders + Lightbox + Swipe ----------
 document.querySelectorAll('.project-slider').forEach((slider, idx) => {
     const slides = slider.querySelectorAll('.slide');
     const dotsContainer = document.getElementById(`dots-${idx}`);
     const prev = slider.querySelector('.slider-prev');
     const next = slider.querySelector('.slider-next');
     let cur = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     // Build dots
     slides.forEach((_, i) => {
@@ -150,6 +156,75 @@ document.querySelectorAll('.project-slider').forEach((slider, idx) => {
 
     prev?.addEventListener('click', () => go(cur - 1));
     next?.addEventListener('click', () => go(cur + 1));
+
+    // Keyboard nav when hovering slider
+    slider.tabIndex = 0;
+    slider.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') go(cur - 1);
+        if (e.key === 'ArrowRight') go(cur + 1);
+    });
+
+    // Touch / Swipe support
+    slider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+            diff > 0 ? go(cur + 1) : go(cur - 1);
+        }
+    }, { passive: true });
+
+    // Click image to open lightbox
+    slides.forEach((img) => {
+        img.addEventListener('click', () => openLightbox(img.src, img.alt));
+    });
+});
+
+// ---------- Lightbox ----------
+function openLightbox(src, alt) {
+    let box = document.getElementById('imgLightbox');
+    if (!box) {
+        box = document.createElement('div');
+        box.id = 'imgLightbox';
+        box.className = 'lightbox';
+        box.innerHTML = `
+            <button class="lightbox-close" aria-label="Close">&times;</button>
+            <img class="lightbox-img" src="" alt="">
+            <span class="lightbox-caption"></span>
+        `;
+        document.body.appendChild(box);
+
+        box.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        box.addEventListener('click', (e) => { if (e.target === box) closeLightbox(); });
+    }
+
+    const img = box.querySelector('.lightbox-img');
+    const cap = box.querySelector('.lightbox-caption');
+
+    requestAnimationFrame(() => {
+        img.src = src;
+        img.alt = alt;
+        cap.textContent = alt;
+        box.classList.add('active');
+    });
+
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const box = document.getElementById('imgLightbox');
+    if (box) {
+        box.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
 });
 
 // ---------- Reveal on scroll ----------
@@ -207,15 +282,40 @@ themeBtn?.addEventListener('click', () => {
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
 });
 
+// ---------- Active nav on scroll ----------
 const sections = document.querySelectorAll('section[id]');
 const navAs = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+        const sectionTop = s.offsetTop - 100;
+        if (window.scrollY >= sectionTop) current = s.id;
     });
+
     navAs.forEach(a => {
-        a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--green)' : '';
+        const href = a.getAttribute('href');
+        if (href === `#${current}`) {
+            a.style.color = 'var(--green)';
+            a.style.background = 'var(--green-dim)';
+        } else {
+            a.style.color = '';
+            a.style.background = '';
+        }
     });
+}, { passive: true });
+
+// ---------- Auto-hide FAB on scroll ----------
+let lastScroll = 0;
+const mobFab = document.getElementById('mobFab');
+window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (!mobFab) return;
+
+    if (currentScroll > lastScroll && currentScroll > 200 && fabOpen === false) {
+        mobFab.style.transform = 'translateY(100px)';
+    } else {
+        mobFab.style.transform = 'translateY(0)';
+    }
+    lastScroll = currentScroll;
 }, { passive: true });
