@@ -756,26 +756,25 @@ nav { display: flex; align-items: center; }
 /* ---------- Featured project (Krihouse) ---------- */
 .project-featured {
     grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1.55fr 1fr;
     border-color: rgba(0,217,126,0.25);
 }
 .project-featured .project-slider {
     height: auto;
-    min-height: 380px;
+    aspect-ratio: 16 / 9;
+    max-height: 600px;
+    margin: 0 auto;
 }
-.project-featured .slide {
-    padding: 0;
-    object-fit: cover;
-    object-position: top left;
-}
+.project-featured .slide { padding: 0; object-fit: contain; }
 .project-featured .project-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 30px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    padding: 30px 34px 34px;
+    border-top: 1px solid var(--card-border);
 }
-.project-featured .project-info h3 { font-size: 1.5rem; }
+.project-featured .project-info h3 { font-size: 1.6rem; }
+.project-featured .project-info p { margin-bottom: 0; font-size: 14px; }
+.pf-side { display: flex; flex-direction: column; justify-content: center; }
 .project-top {
     display: flex;
     align-items: center;
@@ -832,8 +831,7 @@ nav { display: flex; align-items: center; }
 }
 
 @media (max-width: 1024px) {
-    .project-featured { grid-template-columns: 1fr; }
-    .project-featured .project-slider { min-height: 0; aspect-ratio: 16 / 9; }
+    .project-featured .project-info { grid-template-columns: 1fr; gap: 18px; }
 }
 @media (max-width: 480px) {
     .project-featured .project-info { padding: 22px; }
